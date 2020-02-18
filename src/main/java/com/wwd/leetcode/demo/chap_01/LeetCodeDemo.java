@@ -535,6 +535,40 @@ public class LeetCodeDemo {
         return result.intValue();
     }
 
+    // 判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
+    //
+    //示例 1:
+    //
+    //输入: 121
+    //输出: true
+
+    @Test
+    public void isPalindrome() {
+        System.out.println(isPalindrome(0));
+    }
+
+    public boolean isPalindrome(int x) {
+        boolean result = false;
+        StringBuilder rightBuilder = new StringBuilder();
+        String temp = "";
+        int length = 0;
+        if (x > Integer.MIN_VALUE && x < Integer.MAX_VALUE) {
+            if (x >= 0) {
+                temp = String.valueOf(x);
+                length = temp.length();
+                // 从右往做遍历字符
+                for (int i = length - 1; i >= 0; i--) {
+                    rightBuilder.append(temp.charAt(i));
+                }
+                if (temp.equals(rightBuilder.toString())) {
+                    result = true;
+                }
+            }
+        }
+
+        return result;
+    }
+
 
     @Test
     public void dd() {
